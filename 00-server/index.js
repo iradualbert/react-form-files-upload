@@ -11,7 +11,7 @@ app.use(fileUpload({
 }));
 app.use(cors());
 
-app.post("/upload", (req, res) => {
+app.post("/uploads", (req, res) => {
   if (req.files?.Image === undefined) {
     res.status(400).send({ message: "Please upload a file!" });
     return;

@@ -1,38 +1,82 @@
-.App {
+@import url(https://fonts.googleapis.com/css?family=Lato&display=swap);
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 800px;
+}
+
+h1 {
+	margin: 10px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+input, button {
+  border: 2px solid #d4d0d0;
+  padding: 8px;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+  width: 100%;
+  border-radius: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+	background-color: #1a1c2e;
+	color: white;
+	border-radius: 20px;
+}
+button:disabled {
+	background-color:#d4d0d0
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-top: 2em;
+  margin-right: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+input:focus, select:focus, button:focus{
+	outline: none;
+	border: 2px solid #818cf8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.img-preview {
+	display: flex;
+	margin: 12px 0;
+	flex-wrap: wrap;
+} 
+
+.img-preview > img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	padding: 12px;
+}
+
+.actions {
+	display: flex;
+	justify-content: space-around;
+}
+
+.actions > button {
+	max-width: 300px;
 }
