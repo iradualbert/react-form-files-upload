@@ -19,11 +19,10 @@ app.post("/uploads", (req, res) => {
   const Image = req.files.Image;
 
   Image.mv(`./uploads/${Image.name}`, (err) => {
-    console.log(err);
-    return res.status(500).send({ message: "Couldn't save the image", err });
+    if(err) return res.status(500).send({ message: "Couldn't save the image", err });
   });
 
-  res.status(200).send({
+  return res.status(200).send({
     message: `${req.files.Image.name}: Uploaded the file successfully`,
     url: `http://localhost:${PORT}/uploads/${Image.name}`,
     path: `${__dirname}/uploads/${ Image.name}`,
